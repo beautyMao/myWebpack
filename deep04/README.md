@@ -17,5 +17,30 @@
     options.deepChildren 
     options.async （创建一个异步的公共代码流）
     ```
+##### 设置单个entry无法提取公共代码
 
     ![i](./images/1539089344389.jpg)
+    此时这么配置webpack即单入口
+    ![i](./images/1539090224975.jpg)
+
+
+#### 代码分割和懒加载
+
+
+```
+//可打包在一起的同步代码，使用import语法
+import list from './list';
+
+//需要独立打包、异步加载的代码，使用require.ensure
+require.ensure([], function(require){
+    var list = require('./list');
+});
+```
+
+```
+//通过注释的方式写入参数
+ import(/* webpackChunkName:'subPageA' */'./subPageA').then(function(subPageA){
+        //subpageA页面加载完后回调 每个import都是promise
+        console.log(subPageA)
+    })
+```
