@@ -34,6 +34,15 @@ module.exports = {
 > fallback:编译后用什么loader来提取css文件
 > publicfile:用来覆盖项目路径,生成该css文件的文件路径
 
+### PostCSS in webpack
+
+
+> postcss 主流的插件 Autoprefixer css-nano css-next
+
+### Autoprefixer
+> 使用一个数据库根据当前浏览器的普及度以及属性支持提供给你前缀
+
+
 
 
 
